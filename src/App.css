@@ -20,3 +20,13 @@
 .App-link {
   color: #09d3ac;
 }
+
+.listUl {
+  width: 100px;
+  margin: 20px auto;
+}
+
+.listLi {
+  display: flex;
+  flex-direction: column;
+}
