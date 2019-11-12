@@ -21,6 +21,25 @@
   color: #09d3ac;
 }
 
+.renderInput {
+  height: 100px;
+}
+
+.inputStyle {
+  margin-top: 50px;
+  height: 20px;
+  width: 15%;;
+}
+
+
+.renderList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
 .listUl {
   width: 100px;
   margin: 20px auto;

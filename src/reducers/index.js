@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import listState from './listReducer';
+import searchState from './searchReducer';
 
 const rootReducer = combineReducers({
- listState
+ listState,
+ searchState,
 });
 
 export default rootReducer;

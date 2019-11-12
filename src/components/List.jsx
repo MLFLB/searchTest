@@ -11,14 +11,19 @@ const List = () => {
   const removeToStorage = (truc) => () => dispatch(removeFromLocalStorage(truc));
 
   const storageItem = useSelector(state => state.listState.storage);
+  const toto = useSelector(state => state.searchState.inputStorage);
+  console.log('inputStorage from list : ', toto);
 
-  const _renderList = () => {
-    return data.sort((idx1, idx2) => idx1.id - idx2.id).map(item => (
-      <div key={item.id}>
-        <ul className="listUl">
+  
+  const _renderList = () => { 
+  
+
+    return data.sort((idx1, idx2) => idx1.id - idx2.id).filter(machin => machin.username.toLowerCase().startsWith(toto.toLowerCase()) ).map(item => (
+      
+        <ul className="listUl" key={item.id}>
           <li className="listLi"><img alt="userpicture" src={item.picture} onClick={addToStorage(item)} />{item.username}</li>
         </ul>
-      </div>
+   
     ))
   }
 
@@ -34,17 +39,17 @@ const List = () => {
 
   return (
     <Fragment>
-      Personnes Selectionnées : 
-      {_renderStorage()}
+      <span className="titleRender">Personnes Selectionnées : </span>
+      <div className="renderList">
+      {(!toto) && _renderStorage()}
+      </div>
       <br/>
-      Liste des personnes : 
+      <span className="titleRender">Liste des personnes : </span>
+      <div className="renderList">
       {_renderList()}
+      </div>
     </Fragment>
   )
-  //return _renderStorage();
-
-  // return _renderList();
-
 
 }
 
